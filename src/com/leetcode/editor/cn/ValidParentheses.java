@@ -42,10 +42,17 @@
   
 package com.leetcode.editor.cn;
 
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Stack;
+
 public class ValidParentheses{
     public static void main(String[] args) {
       Solution solution = new ValidParentheses().new Solution();
-      
+      String s = "()[]{}";
+      System.out.println(solution.isValid(s));
       }
    //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
@@ -53,7 +60,29 @@ class Solution {
         if(s.length() == 0){
             return true;
         }
-        return false;
+        //辅助函数
+        Map<Character,Character> paris = new HashMap<Character, Character>(){{
+            put(')','(');
+            put(']','[');
+            put('}','{');
+        }};
+        //栈 先进后出
+        Stack<Character> stack = new Stack<>();
+//        Deque<Character> stack = new LinkedList<>();
+        for(int i = 0; i < s.length(); i++){
+            char ch = s.charAt(i);
+            if(paris.containsKey(ch)){
+                //如果栈顶元素和左括号没有匹配上
+                if(stack.isEmpty() || stack.peek() != paris.get(ch)){
+                    return false;
+                }
+                //匹配上出栈
+                stack.pop();
+            }else{
+                stack.push(ch);
+            }
+        }
+        return stack.isEmpty();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
