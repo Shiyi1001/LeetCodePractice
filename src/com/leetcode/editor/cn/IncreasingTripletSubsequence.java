@@ -42,33 +42,34 @@
 // 进阶：你能实现时间复杂度为 O(n) ，空间复杂度为 O(1) 的解决方案吗？ 
 // Related Topics 贪心 数组
 
-  
+
 package com.leetcode.editor.cn;
 
-public class IncreasingTripletSubsequence{
+public class IncreasingTripletSubsequence {
     public static void main(String[] args) {
-      Solution solution = new IncreasingTripletSubsequence().new Solution();
+        Solution solution = new IncreasingTripletSubsequence().new Solution();
         int[] nums = {1, 1, 1, 1, 1};
         System.out.println(solution.increasingTriplet(nums));
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean increasingTriplet(int[] nums) {
-
-        int small = Integer.MAX_VALUE;
-        int mid = Integer.MAX_VALUE;
-        for (int num : nums) {
-            if(num <= small){
-                small = num;
-            }else if(num <= mid){
-                mid = num;
-            }else {
-                return true;
-            }
-        }
-        return false;
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean increasingTriplet(int[] nums) {
+
+            int small = Integer.MAX_VALUE;
+            int mid = Integer.MAX_VALUE;
+            for (int num : nums) {
+                if (num <= small) {
+                    small = num;
+                } else if (num <= mid) {
+                    mid = num;
+                } else {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

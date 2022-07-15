@@ -27,54 +27,55 @@
 // 
 // Related Topics 栈 设计 队列
 
-  
+
 package com.leetcode.editor.cn;
 
-import java.util.LinkedList;
 import java.util.Stack;
 
 /**
  * 栈 先进后出  队列 先进先出， 利用一个栈存数据 一个栈 删数据
  * Stack  是线程安全的  效率要比LinkedList 慢
+ *
  * @Param null
  * @Return
  * @Date 2021/09/16 11:38
  * @Author FengL
  */
-public class YongLiangGeZhanShiXianDuiLieLcof{
+public class YongLiangGeZhanShiXianDuiLieLcof {
     public static void main(String[] args) {
         CQueue cQueue = new YongLiangGeZhanShiXianDuiLieLcof().new CQueue();
-      
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-   class CQueue {
-       private Stack<Integer> stack1;
-       private Stack<Integer> stack2;
+
+    }
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class CQueue {
+        private Stack<Integer> stack1;
+        private Stack<Integer> stack2;
 //       private LinkedList<Integer> stack1;
 //       private LinkedList<Integer> stack2;
 
-       public CQueue() {
-           stack1 = new Stack<>();
-           stack2 = new Stack<>();
+        public CQueue() {
+            stack1 = new Stack<>();
+            stack2 = new Stack<>();
 //           stack1 = new LinkedList<>();
 //           stack2 = new LinkedList<>();
-       }
+        }
 
-       public void appendTail(int value) {
-        stack1.push(value);
-       }
+        public void appendTail(int value) {
+            stack1.push(value);
+        }
 
-       public int deleteHead() {
-           if (!stack2.isEmpty()) {
-               return stack2.pop();
-           } else {
-               while (!stack1.isEmpty()) {
-                   stack2.push(stack1.pop());
-               }
-               return stack2.isEmpty() ? -1 : stack2.pop();
-           }
-       }
-   }
+        public int deleteHead() {
+            if (!stack2.isEmpty()) {
+                return stack2.pop();
+            } else {
+                while (!stack1.isEmpty()) {
+                    stack2.push(stack1.pop());
+                }
+                return stack2.isEmpty() ? -1 : stack2.pop();
+            }
+        }
+    }
 
 /**
  * Your CQueue object will be instantiated and called as such:
@@ -84,4 +85,4 @@ public class YongLiangGeZhanShiXianDuiLieLcof{
  */
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

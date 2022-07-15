@@ -35,48 +35,59 @@
 // Related Topics 递归 链表 
 // 👍 1932 👎 0
 
-  
+
 package com.leetcode.editor.cn;
 
-public class MergeTwoSortedLists{
+public class MergeTwoSortedLists {
     public static void main(String[] args) {
-      Solution solution = new MergeTwoSortedLists().new Solution();
-      
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-public class ListNode {
-    int val;
-    ListNode next;
-     ListNode() {}
-     ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- }
-class Solution {
-    //递归
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if(l1 == null){
-            return l2;
-        }else if(l2 == null){
-            return l1;
-        }else if(l1.val < l2.val){
-            l1.next = mergeTwoLists(l1.next,l2);
-            return l1;
-        }else{
-            l2.next = mergeTwoLists(l1,l2.next);
-            return l2;
+        Solution solution = new MergeTwoSortedLists().new Solution();
+
+    }
+    //leetcode submit region begin(Prohibit modification and deletion)
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode() {}
+     * ListNode(int val) { this.val = val; }
+     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
         }
     }
-    //迭代
+
+    class Solution {
+        //递归
+        public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+            if (l1 == null) {
+                return l2;
+            } else if (l2 == null) {
+                return l1;
+            } else if (l1.val < l2.val) {
+                l1.next = mergeTwoLists(l1.next, l2);
+                return l1;
+            } else {
+                l2.next = mergeTwoLists(l1, l2.next);
+                return l2;
+            }
+        }
+        //迭代
    /* public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(-1);
         ListNode prev = head;
@@ -94,7 +105,7 @@ class Solution {
         prev.next = l1 == null? l2 : l1;
         return head.next;
     }*/
-}
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

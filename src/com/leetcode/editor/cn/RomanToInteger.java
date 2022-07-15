@@ -52,51 +52,21 @@
 //解释: M = 1000, CM = 900, XC = 90, IV = 4. 
 // Related Topics 数学 字符串
 
-  
+
 package com.leetcode.editor.cn;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RomanToInteger{
+public class RomanToInteger {
     public static void main(String[] args) {
-      Solution solution = new RomanToInteger().new Solution();
+        Solution solution = new RomanToInteger().new Solution();
         System.out.println(solution.romanToInt("MCMXCIV"));
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int romanToInt(String s) {
-        int result = 0;
-        int preNum = getValue(s.charAt(0));
-        for (int i = 1; i < s.length(); i++) {
-            int num = getValue(s.charAt(i));
-            if(preNum < num){
-                result -= preNum;
-            }else {
-                result += preNum;
-            }
-            preNum = num;
-        }
-        result += preNum;
-       return result;
     }
-     public int getValue(char ch){
-        switch (ch){
-            case 'I' : return 1;
-            case 'V' : return 5;
-            case 'X' : return 10;
-            case 'L' : return 50;
-            case 'C' : return 100;
-            case 'D' : return 500;
-            case 'M' : return 1000;
-            default : return 0;
-        }
-     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
 
     /**
-     *  凡是一一对应关系的 都应该想到可以用hash表存储
+     * 凡是一一对应关系的 都应该想到可以用hash表存储
+     *
      * @param s
      * @return int
      * @Author FengL
@@ -104,31 +74,72 @@ class Solution {
      */
     public int romanToIntOther(String s) {
         Map<String, Integer> map = new HashMap<>();
-        map.put("I",1);
+        map.put("I", 1);
         map.put("IV", 4);
         map.put("V", 5);
-        map.put("IX",9);
-        map.put("X",10);
-        map.put("XL",40);
+        map.put("IX", 9);
+        map.put("X", 10);
+        map.put("XL", 40);
         map.put("L", 50);
-        map.put("XC",90);
-        map.put("C",100);
-        map.put("CD",400);
-        map.put("D",500);
+        map.put("XC", 90);
+        map.put("C", 100);
+        map.put("CD", 400);
+        map.put("D", 500);
         map.put("CM", 900);
-        map.put("M",1000);
+        map.put("M", 1000);
 
         int result = 0;
 
         for (int i = 0; i < s.length(); ) {
-            if(i + 1 < s.length() && map.containsKey(s.substring(i,i + 2))){
+            if (i + 1 < s.length() && map.containsKey(s.substring(i, i + 2))) {
                 result += map.get(s.substring(i, i + 2));
                 i += 2;
-            }else{
+            } else {
                 result += map.get(s.substring(i, i + 1));
-                i ++;
+                i++;
             }
         }
         return result;
     }
-  }
+//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int romanToInt(String s) {
+            int result = 0;
+            int preNum = getValue(s.charAt(0));
+            for (int i = 1; i < s.length(); i++) {
+                int num = getValue(s.charAt(i));
+                if (preNum < num) {
+                    result -= preNum;
+                } else {
+                    result += preNum;
+                }
+                preNum = num;
+            }
+            result += preNum;
+            return result;
+        }
+
+        public int getValue(char ch) {
+            switch (ch) {
+                case 'I':
+                    return 1;
+                case 'V':
+                    return 5;
+                case 'X':
+                    return 10;
+                case 'L':
+                    return 50;
+                case 'C':
+                    return 100;
+                case 'D':
+                    return 500;
+                case 'M':
+                    return 1000;
+                default:
+                    return 0;
+            }
+        }
+    }
+}

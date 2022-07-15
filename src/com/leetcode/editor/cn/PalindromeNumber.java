@@ -25,34 +25,18 @@
 // 你能不将整数转为字符串来解决这个问题吗？ 
 // Related Topics 数学
 
-  
+
 package com.leetcode.editor.cn;
 
-public class PalindromeNumber{
+public class PalindromeNumber {
     public static void main(String[] args) {
-      Solution solution = new PalindromeNumber().new Solution();
+        Solution solution = new PalindromeNumber().new Solution();
         System.out.println(solution.isPalindrome(12214));
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isPalindrome(int x) {
-        //负数和尾数为0 的肯定不是回文数
-        if(x < 0 || (x % 10 == 0 && x != 0)){
-            return false;
-        }
-        int temp = x;
-        long reverseNumber = 0;
-        while (temp > 0){
-            reverseNumber = reverseNumber * 10 + temp % 10;
-            temp /= 10;
-        }
-        return  x == (int)reverseNumber;
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
 
     /**
      * 反转存在溢出情况 可以考虑反转一半 进行比较
+     *
      * @param x
      * @return boolean
      * @Author FengL
@@ -60,16 +44,34 @@ class Solution {
      */
     public boolean isPalindromeOffic(int x) {
         //负数和尾数为0 的肯定不是回文数
-        if(x < 0 || (x % 10 == 0 && x != 0)){
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
             return false;
         }
         int reverseNumber = 0;
-        while (x > reverseNumber){
+        while (x > reverseNumber) {
             reverseNumber = reverseNumber * 10 + x % 10;
             x /= 10;
         }
         //当输入为奇数的时候 中位数不影响反转结果 可以通过 reverseNumber / 10 去掉中位数
         //例如 12321
-        return  x == reverseNumber || x == reverseNumber / 10;
+        return x == reverseNumber || x == reverseNumber / 10;
     }
-  }
+//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isPalindrome(int x) {
+            //负数和尾数为0 的肯定不是回文数
+            if (x < 0 || (x % 10 == 0 && x != 0)) {
+                return false;
+            }
+            int temp = x;
+            long reverseNumber = 0;
+            while (temp > 0) {
+                reverseNumber = reverseNumber * 10 + temp % 10;
+                temp /= 10;
+            }
+            return x == (int) reverseNumber;
+        }
+    }
+}

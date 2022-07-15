@@ -20,38 +20,20 @@
 // 所有输入只包含小写字母 a-z 。 
 // Related Topics 字符串
 
-  
+
 package com.leetcode.editor.cn;
 
-public class LongestCommonPrefix{
+public class LongestCommonPrefix {
     public static void main(String[] args) {
-      Solution solution = new LongestCommonPrefix().new Solution();
-      String[] strs = {"flower","flow","flight"};
-      System.out.println(solution.longestCommonPrefix(strs));
-      System.out.println(longestCommonPrefixOffic(strs));
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String longestCommonPrefix(String[] strs) {
-        if(strs.length == 0){
-            return "";
-        }
-        String prefix = strs[0];
-        for (int i = 1; i < strs.length; i++) {
-            while(strs[i].indexOf(prefix) != 0){
-                prefix = prefix.substring(0, prefix.length() - 1);
-                if(prefix.isEmpty()){
-                    return "";
-                }
-            }
-        }
-        return prefix;
+        Solution solution = new LongestCommonPrefix().new Solution();
+        String[] strs = {"flower", "flow", "flight"};
+        System.out.println(solution.longestCommonPrefix(strs));
+        System.out.println(longestCommonPrefixOffic(strs));
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
 
     /**
      * 二分法
+     *
      * @param strs
      * @return java.lang.String
      * @Author FengL
@@ -59,29 +41,49 @@ class Solution {
      */
     public static String longestCommonPrefixOffic(String[] strs) {
         int minLen = Integer.MAX_VALUE;
-        for (String str: strs) {
+        for (String str : strs) {
             minLen = Math.min(str.length(), minLen);
         }
         int low = 1;
         int high = minLen;
-       while(low < high){
-           int middle = (low + high) / 2;
-           if(isCommonPrefix(strs,middle)){
-               low = middle + 1;
-           }else{
-               high = middle - 1;
-           }
-       }
-        return strs[0].substring(0,(low + high) / 2);
+        while (low < high) {
+            int middle = (low + high) / 2;
+            if (isCommonPrefix(strs, middle)) {
+                low = middle + 1;
+            } else {
+                high = middle - 1;
+            }
+        }
+        return strs[0].substring(0, (low + high) / 2);
     }
+//leetcode submit region end(Prohibit modification and deletion)
 
-    public static boolean isCommonPrefix(String[] strs,int len){
-        String str = strs[0].substring(0,len);
+    public static boolean isCommonPrefix(String[] strs, int len) {
+        String str = strs[0].substring(0, len);
         for (int i = 1; i < strs.length; i++) {
-            if(!strs[i].startsWith(str)){
+            if (!strs[i].startsWith(str)) {
                 return false;
             }
         }
         return true;
     }
-  }
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public String longestCommonPrefix(String[] strs) {
+            if (strs.length == 0) {
+                return "";
+            }
+            String prefix = strs[0];
+            for (int i = 1; i < strs.length; i++) {
+                while (strs[i].indexOf(prefix) != 0) {
+                    prefix = prefix.substring(0, prefix.length() - 1);
+                    if (prefix.isEmpty()) {
+                        return "";
+                    }
+                }
+            }
+            return prefix;
+        }
+    }
+}

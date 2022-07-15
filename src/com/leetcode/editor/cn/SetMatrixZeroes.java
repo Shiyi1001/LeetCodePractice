@@ -36,47 +36,48 @@
 // 
 // Related Topics 数组 哈希表 矩阵
 
-  
+
 package com.leetcode.editor.cn;
 
 import java.util.Arrays;
 
-public class SetMatrixZeroes{
+public class SetMatrixZeroes {
     public static void main(String[] args) {
-      Solution solution = new SetMatrixZeroes().new Solution();
-      int[][]  matrix = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
-      solution.setZeroes(matrix);
+        Solution solution = new SetMatrixZeroes().new Solution();
+        int[][] matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+        solution.setZeroes(matrix);
         System.out.println(Arrays.deepToString(matrix));
-      
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public void setZeroes(int[][] matrix) {
 
-        //row[i] 表示 第i行是否有0 col[i]表示第i列是否有0
-        boolean[] col = new boolean[matrix[0].length];
-        boolean[] row = new boolean[ matrix.length];
+    }
 
-        //判断行和列有0的情况
-        for (int i = 0; i < matrix.length; i++) {
-            for(int j = 0; j < matrix[i].length; j++){
-                //如果当前位置有0  那么当前行列都应该标注为0
-                if(matrix[i][j] == 0){
-                    col[j] = true;
-                    row[i] = true;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public void setZeroes(int[][] matrix) {
+
+            //row[i] 表示 第i行是否有0 col[i]表示第i列是否有0
+            boolean[] col = new boolean[matrix[0].length];
+            boolean[] row = new boolean[matrix.length];
+
+            //判断行和列有0的情况
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    //如果当前位置有0  那么当前行列都应该标注为0
+                    if (matrix[i][j] == 0) {
+                        col[j] = true;
+                        row[i] = true;
+                    }
                 }
             }
-        }
 
-        for (int i = 0; i < matrix.length; i++) {
-            for(int j = 0; j < matrix[i].length; j++){
-                if(col[j] || row[i]){
-                    matrix[i][j] = 0;
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    if (col[j] || row[i]) {
+                        matrix[i][j] = 0;
+                    }
                 }
             }
         }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

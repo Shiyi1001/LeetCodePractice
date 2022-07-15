@@ -27,34 +27,35 @@
 // 
 // Related Topics 数组 二分查找
 
-  
+
 package com.leetcode.editor.cn;
 
-public class SearchInsertPosition{
+public class SearchInsertPosition {
     public static void main(String[] args) {
-      Solution solution = new SearchInsertPosition().new Solution();
-      int[] nums = {1,3,5,6};
-        System.out.println(solution.searchInsert(nums,2));
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int searchInsert(int[] nums, int target) {
-        int low = 0;
-        int high = nums.length - 1;
-        while(low <= high){
-            int middle = (low + high) / 2;
-            if(nums[middle] == target){
-                return middle;
-            }
-            if(nums[middle] < target){
-                low = middle + 1;
-            }else {
-                high = middle - 1;
-            }
-        }
-        return  low;
+        Solution solution = new SearchInsertPosition().new Solution();
+        int[] nums = {1, 3, 5, 6};
+        System.out.println(solution.searchInsert(nums, 2));
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int searchInsert(int[] nums, int target) {
+            int low = 0;
+            int high = nums.length - 1;
+            while (low <= high) {
+                int middle = (low + high) / 2;
+                if (nums[middle] == target) {
+                    return middle;
+                }
+                if (nums[middle] < target) {
+                    low = middle + 1;
+                } else {
+                    high = middle - 1;
+                }
+            }
+            return low;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

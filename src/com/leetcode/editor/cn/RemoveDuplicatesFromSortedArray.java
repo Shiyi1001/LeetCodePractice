@@ -42,31 +42,32 @@
 // 
 // Related Topics 数组 双指针
 
-  
+
 package com.leetcode.editor.cn;
 
-public class RemoveDuplicatesFromSortedArray{
+public class RemoveDuplicatesFromSortedArray {
     public static void main(String[] args) {
         Solution solution = new RemoveDuplicatesFromSortedArray().new Solution();
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         System.out.println(solution.removeDuplicates(nums));
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeDuplicates(int[] nums) {
-        if(nums.length == 0){
-            return 0;
-        }
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if(nums[j] != nums[i]){
-                i ++;
-                nums[i] = nums[j];
-            }
-        }
-        return i + 1;
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int removeDuplicates(int[] nums) {
+            if (nums.length == 0) {
+                return 0;
+            }
+            int i = 0;
+            for (int j = 1; j < nums.length; j++) {
+                if (nums[j] != nums[i]) {
+                    i++;
+                    nums[i] = nums[j];
+                }
+            }
+            return i + 1;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}

@@ -47,36 +47,20 @@
 // 
 // Related Topics 数组 双指针
 
-  
+
 package com.leetcode.editor.cn;
 
-public class RemoveElement{
+public class RemoveElement {
     public static void main(String[] args) {
         Solution solution = new RemoveElement().new Solution();
-        int[] nums = {0,1,2,2,3,0,4,2};
+        int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};
         System.out.println(solution.removeElement(nums, 2));
-      }
-   //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeElement(int[] nums, int val) {
-        if(nums.length == 0){
-            return 0;
-        }
-        int i = 0;
-        for (int j = 0; j < nums.length; j++) {
-            if(val != nums[j]){
-                nums[i] = nums[j];
-                i ++;
-            }
-        }
-        return i;
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
 
     /**
      * 数组里面元素顺序可以改变
      * 这样 可以在判断数组元素和val相等时 将该元素 直接和最后一个元素进行交换并释放掉
+     *
      * @param nums
      * @param val
      * @return int
@@ -84,19 +68,37 @@ class Solution {
      * @Date 2020/06/04 16:59
      */
     public int removeElementOffic(int[] nums, int val) {
-        if(nums.length == 0){
+        if (nums.length == 0) {
             return 0;
         }
         int i = 0;
         int n = nums.length;
-        while(i < n){
-            if(nums[i] == val){
+        while (i < n) {
+            if (nums[i] == val) {
                 nums[n - 1] = nums[i];
-                n --;
-            }else{
-                i ++;
+                n--;
+            } else {
+                i++;
             }
         }
         return n;
     }
-  }
+//leetcode submit region end(Prohibit modification and deletion)
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int removeElement(int[] nums, int val) {
+            if (nums.length == 0) {
+                return 0;
+            }
+            int i = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if (val != nums[j]) {
+                    nums[i] = nums[j];
+                    i++;
+                }
+            }
+            return i;
+        }
+    }
+}

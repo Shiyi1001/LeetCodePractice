@@ -68,7 +68,7 @@ public class ImplementStrstr {
                         break;
                     }
                 }
-                if(flag){
+                if (flag) {
                     return i;
                 }
             }
