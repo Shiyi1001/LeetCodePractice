@@ -70,7 +70,7 @@ public class P_Offer_CongShangDaoXiaDaYinErChaShuIiLcof {
                 return new ArrayList<>();
             }
             List<List<Integer>> res = new ArrayList<>();
-            Queue<TreeNode> queue = new LinkedList<>() {{
+            Queue<TreeNode> queue = new LinkedList<TreeNode>() {{
                 add(root);
             }};
             while (!queue.isEmpty()) {

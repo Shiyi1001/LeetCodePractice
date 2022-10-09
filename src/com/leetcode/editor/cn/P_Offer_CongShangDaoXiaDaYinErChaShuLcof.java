@@ -66,7 +66,7 @@ public class P_Offer_CongShangDaoXiaDaYinErChaShuLcof {
                 return new int[0];
             }
             List<Integer> res = new ArrayList<>();
-            Queue<TreeNode> queue = new LinkedList<>() {{
+            Queue<TreeNode> queue = new LinkedList<TreeNode>() {{
                 add(root);
             }};
             while (!queue.isEmpty()) {
