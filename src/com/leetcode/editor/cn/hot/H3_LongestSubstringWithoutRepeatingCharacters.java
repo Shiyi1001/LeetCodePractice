@@ -40,7 +40,7 @@
  * Related Topics 哈希表 字符串 滑动窗口 👍 8392 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.hot;
 
 import java.util.HashMap;
 import java.util.Map;
