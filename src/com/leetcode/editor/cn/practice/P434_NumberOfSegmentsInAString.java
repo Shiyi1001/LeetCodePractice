@@ -13,7 +13,7 @@
  * Related Topics 字符串 👍 191 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 434_字符串中的单词数

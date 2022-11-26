@@ -33,7 +33,7 @@
  * Related Topics 数组 哈希表 👍 1122 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 import java.util.ArrayList;
 import java.util.HashMap;

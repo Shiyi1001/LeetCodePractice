@@ -38,7 +38,7 @@
  * Related Topics 贪心 哈希表 字符串 👍 485 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 import java.util.HashMap;
 import java.util.Map;

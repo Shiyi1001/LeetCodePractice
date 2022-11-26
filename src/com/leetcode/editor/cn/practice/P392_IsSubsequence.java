@@ -42,7 +42,7 @@
  * Related Topics 双指针 字符串 动态规划 👍 754 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 392_判断子序列

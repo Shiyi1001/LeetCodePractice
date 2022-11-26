@@ -39,7 +39,7 @@
  * Related Topics 贪心 数组 双指针 排序 👍 607 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 import java.util.Arrays;
 

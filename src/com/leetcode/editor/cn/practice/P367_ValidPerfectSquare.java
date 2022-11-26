@@ -30,7 +30,7 @@
  * Related Topics 数学 二分查找 👍 451 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 367_有效的完全平方数

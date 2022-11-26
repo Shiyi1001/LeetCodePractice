@@ -35,7 +35,7 @@
  * Related Topics 位运算 哈希表 字符串 排序 👍 366 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 389_找不同

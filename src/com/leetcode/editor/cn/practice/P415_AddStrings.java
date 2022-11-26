@@ -41,7 +41,7 @@
  * Related Topics 数学 字符串 模拟 👍 642 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 415_字符串相加

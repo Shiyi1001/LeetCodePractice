@@ -42,7 +42,7 @@
  * Related Topics 数组 排序 👍 392 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 414_第三大的数
@@ -66,7 +66,7 @@ public class P414_ThirdMaximumNumber {
                 } else if (num > b && a > num) {
                     c = b;
                     b = num;
-                } else if(num > c && b > num){
+                } else if (num > c && b > num) {
                     c = num;
                 }
             }

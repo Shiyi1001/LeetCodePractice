@@ -36,7 +36,7 @@
  * Related Topics 队列 哈希表 字符串 计数 👍 621 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 import java.util.HashMap;
 import java.util.Map;
