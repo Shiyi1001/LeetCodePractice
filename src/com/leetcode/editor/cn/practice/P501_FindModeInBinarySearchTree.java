@@ -43,7 +43,7 @@
  * Related Topics 树 深度优先搜索 二叉搜索树 二叉树 👍 553 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 import com.leetcode.editor.commons.TreeNode;
 
@@ -76,7 +76,7 @@ public class P501_FindModeInBinarySearchTree {
      * }
      * }
      */
-    
+
     /**
      * 根据BST的特性，当前二叉树的中序遍历重复的数字一定是连续出现的
      */

@@ -45,7 +45,7 @@
  * Related Topics 深度优先搜索 广度优先搜索 数组 矩阵 👍 623 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 463_岛屿的周长

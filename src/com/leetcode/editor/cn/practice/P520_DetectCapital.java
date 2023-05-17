@@ -37,7 +37,7 @@
  * Related Topics 字符串 👍 223 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 /**
  * @Title 520_检测大写字母
@@ -54,7 +54,7 @@ public class P520_DetectCapital {
         public boolean detectCapitalUse(String word) {
 
             return word.equals(word.toUpperCase())
-                || word.substring(1).equals(word.substring(1).toLowerCase());
+                    || word.substring(1).equals(word.substring(1).toLowerCase());
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -36,7 +36,7 @@
  * Related Topics 树 深度优先搜索 广度优先搜索 二叉搜索树 二叉树 👍 404 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 import com.leetcode.editor.commons.TreeNode;
 

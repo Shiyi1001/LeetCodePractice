@@ -39,7 +39,7 @@
  * Related Topics 贪心 数组 计数排序 排序 👍 323 👎 0
  */
 
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.practice;
 
 import java.util.Arrays;
 
